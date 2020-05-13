@@ -3,9 +3,19 @@ The Asus X299 Hackintosh repo contains OpenCore EFI distributions and related fi
 
 Please refer to the [OpenCore Vanilla Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/) for a proper guide.  
 You can use the Base-EFI folder as a base to refer to. 
-The repo and base EFI was based off the ASUS WS X299 Sage/10G running BIOS 3101.
 
 Additional references: [OpenCore Documentation](https://github.com/acidanthera/OpenCorePkg/tree/master/Docs)
+
+# Hardware Specifications
+* Motherboard: ASUS WS X299 Sage/10G; BIOS 3101
+* CPU Cooler: Fractal Design Celsius+ S36
+* CPU: Intel i9-9960X
+* RAM: 4x16 Corsair Vengeance RGB 3200 @2933
+* SSD: Samsung 970 EVO 1 TB
+* GPU: Sapphire Pulse RX 580
+* Wifi/BT: Broadcom BCM94360CD
+* PSU: Corsair RM850X
+* Case: Lian Li PC-011 Dynamic
 
 # What Works
 * Sleep / Wake
@@ -36,7 +46,7 @@ Additional references: [OpenCore Documentation](https://github.com/acidanthera/O
 # Required Kexts
 * AppleALC.kext
 * Lilu.kext
-* VirtualSMC.kext (includes SMCProcessor.kext, SMCSuperIO.kext)
+* VirtualSMC.kext (Include SMCProcessor.kext, SMCSuperIO.kext)
 * WhateverGreen.kext
 * TSCAdjustReset.kext (Right-click the kext and click Show Package Contents.  Adjust IOCPUNumber in Info.plist-> IOKitPersonalities-> TSCAdjustReset-> IOPropertyMatch) to number of threads - 1.  For example, i9-7980XE would be 35)
 * MacProMemoryNotificationDisabler.kext (Only needed for MacPro7,1 to disable the Memory module error notification)
@@ -45,7 +55,10 @@ Additional references: [OpenCore Documentation](https://github.com/acidanthera/O
 * SSDT-AWAC.aml (Required on Cascade-Lake X Refresh motherboards and latest ASUS BIOS)
 
 # Additional Kexts
-
+* SmallTreeIntel8259x.kext (Enables built-in 10G ethernet ports on the Sage/10G.  Requires Ubuntu EEPROM modding outlined in @KGPs [guide section E.8.2.2](https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/)
+* IntelMausiEthernet.kext (Enables ethernet for most intel controllers)
+* X299USB.kext (Maps USB ports.  Please use this as a reference only and follow the guide to create your own)
+* [AGPMInjector.kext](https://github.com/Pavo-IM/AGPMInjector)
 
 # Patching Asus BIOS
 The latest release of ASUS X299 BIOS MSR lock option is broken so we will need to patch it in order to use the latest BIOS.  
