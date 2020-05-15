@@ -1,5 +1,5 @@
 # Introduction
-The Asus X299 Hackintosh repo contains OpenCore EFI distributions and related files that can be used as a reference when starting your X299 Hackintosh. It is currently based on the latest release 0.5.8
+The ASUS X299 Hackintosh repo contains OpenCore EFI distributions and related files that can be used as a reference when starting your X299 Hackintosh. It is currently based on the latest release 0.5.8
 
 Please refer to the [OpenCore Vanilla Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/) for a proper guide.  
 You can use the Base-EFI folder as a reference. 
@@ -60,7 +60,7 @@ Additional references: [OpenCore Documentation](https://github.com/acidanthera/O
 * X299USB.kext (Maps USB ports.  Please use this as a reference only and follow the guide to create your own)
 * [AGPMInjector.kext](https://github.com/Pavo-IM/AGPMInjector) (Apple Graphics Power Management injector)
 
-# Patching Asus BIOS (Required on latest BIOS and Cascade Lake-X Refresh Motherboards)
+# Patching ASUS BIOS (Required on latest BIOS and Cascade Lake-X Refresh Motherboards)
 In the latest release of ASUS BIOS for X299 Motherboards and Cascade Lake-X Refresh boards, the MSR lock option is broken so we will need to patch it in order disable the MSR lock.  
 NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboard's manual)
 
