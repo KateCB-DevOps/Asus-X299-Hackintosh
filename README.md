@@ -2,7 +2,7 @@
 The Asus X299 Hackintosh repo contains OpenCore EFI distributions and related files that can be used as a reference when starting your X299 Hackintosh. It is currently based on the latest release 0.5.8
 
 Please refer to the [OpenCore Vanilla Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/) for a proper guide.  
-You can use the Base-EFI folder as a base to refer to. 
+You can use the Base-EFI folder as a reference. 
 
 Additional references: [OpenCore Documentation](https://github.com/acidanthera/OpenCorePkg/tree/master/Docs)
 
@@ -23,7 +23,7 @@ Additional references: [OpenCore Documentation](https://github.com/acidanthera/O
 * Handoff, Continuity, AirDrop, Continuity Camera, and Unlock with Apple Watch
 * iMessage, FaceTime, App Store, iTunes Store
 * Ethernet
-* 10 Gb Ethernet
+* 10G Ethernet
 * HEVC, H.264
 * Onboard audio
 * TRIM
@@ -58,10 +58,10 @@ Additional references: [OpenCore Documentation](https://github.com/acidanthera/O
 * SmallTreeIntel8259x.kext (Enables built-in 10G ethernet ports on the Sage/10G.  Requires Ubuntu EEPROM modding outlined in @KGPs [guide section E.8.2.2](https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/)
 * IntelMausiEthernet.kext (Enables ethernet for most intel controllers)
 * X299USB.kext (Maps USB ports.  Please use this as a reference only and follow the guide to create your own)
-* [AGPMInjector.kext](https://github.com/Pavo-IM/AGPMInjector)
+* [AGPMInjector.kext](https://github.com/Pavo-IM/AGPMInjector) (Apple Graphics Power Management injector)
 
-# Patching Asus BIOS
-The latest release of ASUS X299 BIOS MSR lock option is broken so we will need to patch it in order to use the latest BIOS.  
+# Patching Asus BIOS (Required on latest BIOS and Cascade Lake-X Refresh Motherboards)
+In the latest release of ASUS BIOS for X299 Motherboards and Cascade Lake-X Refresh boards, the MSR lock option is broken so we will need to patch it in order disable the MSR lock.  
 NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboard's manual)
 
 1.  Download UEFIPatch in the ASUS Bios Patch folder and copy latest version of your BIOS in same folder
