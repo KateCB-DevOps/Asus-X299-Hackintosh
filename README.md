@@ -1,10 +1,16 @@
 # Introduction
-The ASUS X299 Hackintosh repo contains OpenCore EFI distributions and related files that can be used as a reference when starting your X299 Hackintosh. It is currently based on the latest release 0.5.8
+The ASUS X299 Hackintosh repo contains OpenCore EFI distributions and related files that can be used as a reference when starting or migrating your X299 Hackintosh to OpenCore. 
 
-Please refer to the [OpenCore Vanilla Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/) for a proper guide.  
-You can use the Base-EFI folder as a reference. 
+References: 
+* [OpenCore Vanilla Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/)
+* [OpenCore Documentation](https://github.com/acidanthera/OpenCorePkg/tree/master/Docs)
 
-Additional references: [OpenCore Documentation](https://github.com/acidanthera/OpenCorePkg/tree/master/Docs)
+# Folders
+* ASUS BIOS Patch - Contains version of UEFITool to patch ASUS BIOS versions (3006, 3101) and BIOS 0603 for Cascade Lake-X Refresh Motherboards as the CFG lock option in the BIOS is broken.  This patch disables the lock so we don't have to enable AppleCpuPMCfgLock and AppleXcpmCfgLock.  Instructions to apply patch are below under (Patching ASUS BIOS)
+* Base-EFI - OpenCore EFI built on latest release 0.5.8 that should be valid for all ASUS X299 boards.  However, please use this EFI as a reference and refer to the Vanilla Desktop Guide for a proper guide. 
+* EFI-Validated-Distributions - Validated EFIs from other users
+* Kexts - Optional kexts that are optional depending on your build.
+* SSDT - Optional SSDTs that are optional depending on your build.
 
 # Hardware Specifications
 * Motherboard: ASUS WS X299 Sage/10G; BIOS 3101
@@ -61,7 +67,7 @@ Additional references: [OpenCore Documentation](https://github.com/acidanthera/O
 * [AGPMInjector.kext](https://github.com/Pavo-IM/AGPMInjector) (Apple Graphics Power Management injector)
 
 # Patching ASUS BIOS (Required on latest BIOS and Cascade Lake-X Refresh Motherboards)
-In the latest release of ASUS BIOS for X299 Motherboards and Cascade Lake-X Refresh boards, the MSR lock option is broken so we will need to patch it in order disable the MSR lock.  
+In the latest release of ASUS BIOS for X299 Motherboards (BIOS 3006, 3101) and Cascade Lake-X Refresh boards, the MSR lock option is broken so we will need to patch it in order disable it.  
 NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboard's manual)
 
 1.  Download UEFIPatch in the ASUS Bios Patch folder and copy latest version of your BIOS in same folder
@@ -69,3 +75,4 @@ NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboar
 3. Then enter: './UEFIPatch WS-X299-SAGE-10G-ASUS-3101.CAP' (Replace the file name of bios with whatever you named your bios)
 4. You should see some lines outputted in terminal ending with 'Image patched' and a new .CAP file with a .patched extension.  Refer to your motherboard's manual (Search for BIOS FlashBack) and rename the .patched file you just created. (For example, WS X299 Sage/10G users, rename the .patched file to 'WSXTG.CAP')
 5. Perform BIOS Flashback.
+6. Add SSDT-AWAC.aml from the SSDT Folder to your EFI.
