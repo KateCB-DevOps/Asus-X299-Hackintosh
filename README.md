@@ -7,7 +7,7 @@ References:
 
 # Folders
 * ASUS BIOS Patch - Contains version of UEFITool to patch ASUS BIOS versions (3006, 3101) and BIOS 0603 for Cascade Lake-X Refresh Motherboards as the CFG lock option in the BIOS is broken.  This patch disables the lock so we don't have to enable AppleCpuPMCfgLock and AppleXcpmCfgLock.  Instructions to apply patch are below under (Patching ASUS BIOS)
-* Base-EFI - OpenCore EFI built on latest release 0.5.8 that should be valid for all ASUS X299 boards.  However, please use this EFI as a reference and refer to the Vanilla Desktop Guide for a proper guide. 
+* Base-EFI - OpenCore EFI built on latest release 0.5.8 that should be valid for all ASUS X299 boards.  The EFI folder has the OpenCanary GUI enabled.  However, please use this EFI as a reference and refer to the Vanilla Desktop Guide for a proper guide. 
 * EFI-Validated-Distributions - Validated EFIs from other users
 * Kexts - Optional kexts that are optional depending on your build.
 * SSDT - Optional SSDTs that are optional depending on your build.
