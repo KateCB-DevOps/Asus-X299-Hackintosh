@@ -12,6 +12,9 @@ References:
 * Kexts - Optional kexts that are optional depending on your build.
 * SSDT - Optional SSDTs that are optional depending on your build.
 
+[About This Mac](https://imgur.com/0Tz7n3S)
+[PCI](https://imgur.com/XMO19u3)
+[Thunderbolt](https://imgur.com/sVvm1qK)
 # Hardware Specifications
 * Motherboard: ASUS WS X299 Sage/10G; BIOS 3101
 * CPU Cooler: Fractal Design Celsius+ S36
@@ -22,6 +25,15 @@ References:
 * Wifi/BT: Broadcom BCM94360CD
 * PSU: Corsair RM850X
 * Case: Lian Li PC-011 Dynamic
+
+# Important BIOS Settings
+* Above 4G Encoding: Enabled
+* MSR Lock: Disabled
+  * If option isn't available, turn on 'AppleCpuPmCfgLock' and 'AppleXcpmCfgLock'.
+  * If on patched ASUS BIOS, MSR lock will already be disabled.
+* CSM: Disabled
+* OS Type: Windows UEFI
+
 
 # What Works
 * Sleep / Wake
