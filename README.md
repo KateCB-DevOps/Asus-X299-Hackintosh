@@ -12,9 +12,9 @@ References:
 * Kexts - Optional kexts that are optional depending on your build.
 * SSDT - Optional SSDTs that are optional depending on your build.
 
-![About This Mac](https://imgur.com/0Tz7n3S)
-![PCI](https://imgur.com/XMO19u3)
-![Thunderbolt](https://imgur.com/sVvm1qK)
+![About This Mac](https://i.imgur.com/0Tz7n3S.png)
+![PCI](https://i.imgur.com/XMO19u3.png)
+![Thunderbolt](https://i.imgur.com/sVvm1qK.png)
 # Hardware Specifications
 * Motherboard: ASUS WS X299 Sage/10G; BIOS 3101
 * CPU Cooler: Fractal Design Celsius+ S36
