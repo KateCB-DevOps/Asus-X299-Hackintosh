@@ -11,6 +11,7 @@ References:
 * EFI-Validated-Distributions - Validated EFIs from other users
 * Kexts - Optional kexts that are optional depending on your build.
 * SSDT - Optional SSDTs that are optional depending on your build.
+* XHC-USB-Kexts - USB kexts created by users for specific motherboards.  Please use [this](https://dortania.github.io/USB-Map-Guide/) as a proper guide to map your USB ports.
 
 # Hardware Specifications
 * Motherboard: ASUS WS X299 Sage/10G; BIOS 3101
@@ -78,8 +79,6 @@ References:
   * Enables built-in Intel 10G ethernet ports on the Sage/10G.  Requires Ubuntu EEPROM modding outlined in @KGPs [guide section E.8.2.2](https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/)
 * IntelMausiEthernet
   * Enables ethernet for most intel controllers
-* X299USB 
-  * Maps USB ports.  Please use this as a reference only and follow the [guide](https://dortania.github.io/USB-Map-Guide/) to create your own
 * [AGPMInjector.kext](https://github.com/Pavo-IM/AGPMInjector) 
   * Apple Graphics Power Management injector
 
