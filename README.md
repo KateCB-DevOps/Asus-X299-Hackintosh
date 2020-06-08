@@ -22,7 +22,26 @@ References:
 * GPU: Sapphire Pulse RX 580
 * Wifi/BT: Broadcom BCM94360CD
 * PSU: Corsair RM850X
-* Case: Lian Li PC-011 Dynamic
+* Case: Lian Li PC-011 Dynamic (Will be replaced with Dune Case Pro)
+
+# PCI Slot Layout
+1. N/A
+2. Gigabyte Titan Ridge Thunderbolt 3 Card (Thunderbolt BIOS Settings Disabled)
+  * IOReg address: PC02->BR2A->SL05->pci-bridge@9
+3. Gigabyte Titan Ridge Thunderbolt 3 Card
+  * IOReg address: PC02->BR2A->SL05->pci-bridge@8
+4. N/A
+5. Sapphire Pulse RX 580
+  * IOReg address: PC01->BR1A->SL01->pci-bridge@10
+6. N/A
+7. Broadcom BCM94360CD
+  * IOReg address: PC01->BR1A->SL01->pci-bridge@8
+
+# M.2/U.2 Slot Layout
+1. U.2 - N/A
+2. M.2 (Vertical) - N/A
+3. M.2 (Lower) - Samsung 970 EVO (macOS Boot Drive)
+  * IOReg address: PC00->RP21->PXSX
 
 # Important BIOS Settings
 * Above 4G Encoding: Enabled
@@ -54,24 +73,24 @@ References:
 * SideCar due to some T2 chip dependancies on MacPro7,1 and iMacPro1,1 SMBIOS (Using Duet Display as alternative)
 
 # Required SSDTs
-* SSDT-EC-USBX
-* SSDT-PLUG
-* SSDT-SBUS-MCHC
+* SSDT-EC-USBX.aml
+* SSDT-PLUG.aml
+* SSDT-SBUS-MCHC.aml
 
 # Required Kexts
-* AppleALC
-* Lilu
-* VirtualSMC
-  * SMCProcessor
-  * SMCSuperIO
-* WhateverGreen
-* TSCAdjustReset
+* AppleALC.kext
+* Lilu.kext
+* VirtualSMC.kext
+  * SMCProcessor.kext
+  * SMCSuperIO.kext
+* WhateverGreen.kext
+* TSCAdjustReset.kext
   * Adjust IOCPUNumber in `Info.plist-> IOKitPersonalities-> TSCAdjustReset-> IOPropertyMatch` to number of threads - 1.  For example, i9-7980XE would be 35
-* MacProMemoryNotificationDisabler
+  * MacProMemoryNotificationDisabler.kext
   * Only needed for MacPro7,1 to disable the Memory module error notification
 
 # Additional SSDTs
-* SSDT-AWAC 
+* SSDT-AWAC.aml
   * Required on Cascade-Lake X Refresh motherboards and latest ASUS BIOS
 
 # Additional Kexts

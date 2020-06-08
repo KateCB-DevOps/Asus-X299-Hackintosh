@@ -536,8 +536,7 @@
 	<key>Misc</key>
 	<dict>
 		<key>BlessOverride</key>
-		<array>
-		</array>
+		<array/>
 		<key>Boot</key>
 		<dict>
 			<key>ConsoleAttributes</key>
@@ -624,7 +623,7 @@
 				<key>Name</key>
 				<string>CleanNvram.efi</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Arguments</key>
 				<string></string>
 				<key>Path</key>
@@ -638,7 +637,7 @@
 				<key>Name</key>
 				<string>OpenShell.efi</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Arguments</key>
 				<string></string>
 				<key>Path</key>
