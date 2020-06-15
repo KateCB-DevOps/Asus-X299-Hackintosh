@@ -34,6 +34,7 @@ References:
 
 # BASE EFI Configuration
 1. Download the latest EFI zip in the Base-EFI folder.
+  * Download [Resources](https://github.com/acidanthera/OcBinaryData/tree/master/Resources) folder and copy to the EFI folder `EFI-OC`
 2. Review
     * Important BIOS Settings
         * Above 4G Encoding: Enabled
