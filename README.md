@@ -6,42 +6,10 @@ References:
 * [OpenCore Documentation](https://github.com/acidanthera/OpenCorePkg/tree/master/Docs)
 
 # Folders
-* ASUS BIOS Patch - Contains version of UEFITool to patch ASUS BIOS versions (3006, 3101) and BIOS 0603 for Cascade Lake-X Refresh Motherboards as the CFG lock option in the BIOS is broken.  This patch disables the lock so we don't have to enable `AppleCpuPMCfgLock` and `AppleXcpmCfgLock`.  Instructions to apply patch are in section (Patching ASUS BIOS)
+* ASUS BIOS Patch - Contains version of UEFITool to patch ASUS BIOS versions (3006, 3101) and BIOS 0603 for Cascade Lake-X Refresh Motherboards as the CFG lock option in the BIOS is broken.  This patch disables the lock so we don't have to enable `AppleCpuPMCfgLock` and `AppleXcpmCfgLock`.  Instructions to apply patch are in section [Patching ASUS BIOS](https://github.com/shinoki7/Asus-X299-Hackintosh#patching-asus-bios-required-on-latest-bios-and-cascade-lake-x-refresh-motherboards)
 * Base-EFI - OpenCore EFI with the OpenCanary GUI built on latest release 0.5.9 that should be valid for all ASUS X299 boards.  However, please use this EFI as a reference and refer to the Vanilla Desktop Guide for a proper guide. 
-* EFI-Validated-Distributions - Validated EFIs from other users
-* Kexts - Optional kexts that are optional depending on your build.
-* SSDT - Optional SSDTs that are optional depending on your build.
+* EFI-Validated-Distributions - Validated EFIs from other users (Please use this as a reference only)
 * XHC-USB-Kexts - USB kexts created by users for specific motherboards.  Please use [this](https://dortania.github.io/USB-Map-Guide/) as a proper guide to map your USB ports.
-
-# Hardware Specifications
-* Motherboard: ASUS WS X299 Sage/10G; BIOS 3101
-* CPU Cooler: Fractal Design Celsius+ S36
-* CPU: Intel i9-9960X
-* RAM: 4x16 Corsair Vengeance RGB 3200 @2933
-* SSD: Samsung 970 EVO 1 TB
-* GPU: Sapphire Pulse RX 580
-* Wifi/BT: Broadcom BCM94360CD
-* PSU: Corsair RM850X
-* Case: Lian Li PC-011 Dynamic (Will be replaced with Dune Case Pro)
-
-# PCI Slot Layout
-1. N/A
-2. Gigabyte Titan Ridge Thunderbolt 3 Card (Thunderbolt BIOS Settings Disabled)
-  * IOReg address: PC02->BR2A->SL05->pci-bridge@9
-3. Gigabyte Titan Ridge Thunderbolt 3 Card
-  * IOReg address: PC02->BR2A->SL05->pci-bridge@8
-4. N/A
-5. Sapphire Pulse RX 580
-  * IOReg address: PC01->BR1A->SL01->pci-bridge@10
-6. N/A
-7. Broadcom BCM94360CD
-  * IOReg address: PC01->BR1A->SL01->pci-bridge@8
-
-# M.2/U.2 Slot Layout
-1. U.2 - N/A
-2. M.2 (Vertical) - N/A
-3. M.2 (Lower) - Samsung 970 EVO (macOS Boot Drive)
-  * IOReg address: PC00->RP21->PXSX
 
 # Important BIOS Settings
 * Above 4G Encoding: Enabled
@@ -85,9 +53,9 @@ References:
   * SMCSuperIO.kext
 * WhateverGreen.kext
 * TSCAdjustReset.kext
-  * Adjust IOCPUNumber in `Info.plist-> IOKitPersonalities-> TSCAdjustReset-> IOPropertyMatch` to number of threads - 1.  For example, i9-7980XE would be 35
-  * MacProMemoryNotificationDisabler.kext
-  * Only needed for MacPro7,1 to disable the Memory module error notification
+  * Located in Kexts-TSCAdjustReset folder and adjusted for cores.  Remove the '-(CoreCount)' when copying to your EFI folder.
+* MacProMemoryNotificationDisabler.kext
+* Only needed for MacPro7,1 to disable the Memory module error notification
 
 # Additional SSDTs
 * SSDT-AWAC.aml
@@ -96,8 +64,11 @@ References:
 # Additional Kexts
 * SmallTreeIntel8259x 
   * Enables built-in Intel 10G ethernet ports on the Sage/10G.  Requires Ubuntu EEPROM modding outlined in @KGPs [guide section E.8.2.2](https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/)
-* IntelMausiEthernet
+* IntelMausi
   * Enables ethernet for most intel controllers
+* SmallTreeIntel82576
+  * Enables ethernet for I211 NICs
+  * Version 1.3 is named (SmallTreeIntel82576-Catalina.kext), for older OS use (SmallTreeIntel8259x.kext)
 * [AGPMInjector.kext](https://github.com/Pavo-IM/AGPMInjector) 
   * Apple Graphics Power Management injector
 
