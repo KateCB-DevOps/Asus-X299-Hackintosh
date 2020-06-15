@@ -1,7 +1,7 @@
 The BASE-EFI folder contains an EFI based on the OpenCore Vanilla Desktop Guide that should be valid for all ASUS X299 Motherboards.  Refer to the [OpenCore Vanilla Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/) and the [Skylake-X](https://dortania.github.io/OpenCore-Desktop-Guide/config-HEDT/skylake-x.html) for more information.
 
 Important Details:
-1. There are two config.plist.  One using iMacPro1,1 SMBIOS and one using MacPro7,1 SMBIOS.
+1. There are two config.plist.  One using iMacPro1,1 SMBIOS and one using MacPro7,1 SMBIOS.  Depending on which SMBIOS you choose, rename the file to config.plist and delete the other one.
   * If using iMacPro1,1 SMBIOS, you can delete MacProMemoryNotificationDisabler.kext under `EFI-OC-Kexts`
 2. OpenCanary GUI already enabled.
 3. Assumes that you already have MSR lock disabled in BIOS.  Refer to section [Important BIOS Settings](https://github.com/shinoki7/Asus-X299-Hackintosh#important-bios-settings)
