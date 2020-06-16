@@ -7,7 +7,7 @@ References:
 
 # Folders
 * ASUS BIOS Patch - Contains version of UEFITool to patch ASUS BIOS versions (3006, 3101) and BIOS 0603 for Cascade Lake-X Refresh Motherboards as the CFG lock option in the BIOS is broken.  This patch disables the lock so we don't have to enable `AppleCpuPMCfgLock` and `AppleXcpmCfgLock`.  Instructions to apply patch are in section [Patching ASUS BIOS](https://github.com/shinoki7/Asus-X299-Hackintosh#patching-asus-bios-required-on-latest-bios-and-cascade-lake-x-refresh-motherboards)
-* BASE-EFI - OpenCore EFIs with the OpenCanary GUI that should be valid for all ASUS X299 boards.  Refer to section [BASE-EFI Configuration](https://github.com/shinoki7/Asus-X299-Hackintosh#base-efi-configuration) for more details
+* BASE-EFI - OpenCore EFIs with the OpenCanary GUI that should be valid for all ASUS X299 boards.  Refer to section [BASE-EFI Configuration](https://github.com/shinoki7/Asus-X299-Hackintosh#base-efi-configuration) for more details.
 * EFI-Validated-Distributions (Archive) - Validated EFIs from other users (Please use this as a reference only as these are not updated)
 * XHC-USB-Kexts - USB kexts created by users for specific motherboards.  Please use [this](https://dortania.github.io/USB-Map-Guide/) as a proper guide to map your USB ports.
 
@@ -34,7 +34,7 @@ References:
 
 # BASE EFI Configuration
 1. Download the latest EFI zip in the Base-EFI folder.
-  * Download [Resources](https://github.com/acidanthera/OcBinaryData/tree/master/Resources) folder and copy to the EFI folder `EFI-OC`
+    * Download [Resources](https://github.com/acidanthera/OcBinaryData/tree/master/Resources) folder and copy to the EFI folder `EFI-OC`
 2. Review
     * Important BIOS Settings
         * Above 4G Encoding: Enabled
@@ -45,15 +45,15 @@ References:
     * There are two config.plist:  One using iMacPro1,1 SMBIOS and one using MacPro7,1 SMBIOS. Depending on which SMBIOS you choose, rename the file to config.plist and delete the other one.  
         * MacPro7,1 SMBIOS is only compatible with macOS Catalina and higher
         * If using iMacPro1,1 SMBIOS, you can delete MacProMemoryNotificationDisabler.kext under `EFI-OC-Kexts` 
-    * Assumes that you already have MSR lock disabled in BIOS.  Refer to section [Important BIOS Settings](https://github.com/shinoki7/Asus-X299-Hackintosh#important-bios-settings)
+    * Assumes that you already have MSR lock disabled in BIOS.
         * To patch BIOS, Refer to section [Patching ASUS BIOS](https://github.com/shinoki7/Asus-X299-Hackintosh#patching-asus-bios-required-on-latest-bios-and-cascade-lake-x-refresh-motherboards)
         * If on patched BIOS or Cascade Lake-X Refresh motherboard, copy [SSDT-AWAC](https://github.com/shinoki7/Asus-X299-Hackintosh/blob/master/SSDT/SSDT-AWAC.aml) to the EFI folder under `EFI-OC-ACPI` and add SSDT-AWAC as an entry in your config.plist under `ACPI-Add`
 3. Configuration
     * Ethernet: 
-        * For WS X299 Sage/10G users replace IntelMausi with [SmallTreeIntel8259x.kext](https://github.com/shinoki7/Asus-X299-Hackintosh/blob/master/Kexts/SmallTreeIntel8259x.kext.zip)  and update the kext entry.  NOTE: Requires Ubuntu EEPROM modding outlined in @KGPs [guide section E.8.2.2](https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/)
-        * For users with I211 NICs like the X299 Deluxe, copy the SmallTreeIntel92576 kext to your EFI folder and add a new kext entry under `Kernel-Add`
+        * For WS X299 Sage/10G users replace IntelMausi with [SmallTreeIntel8259x](https://small-tree.com/support/downloads/10-gigabit-ethernet-driver-download-page/) kext and update the kext entry.  NOTE: Requires Ubuntu EEPROM modding outlined in @KGPs [guide section E.8.2.2](https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/)
+        * For users with I211 NICs like the X299 Deluxe, copy the [SmallTreeIntel82576](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases) kext to your EFI folder and add a new kext entry under `Kernel-Add`
     * TSCAdjustReset:
-    * From the Kexts-TSCAdjustReset [folder](https://github.com/shinoki7/Asus-X299-Hackintosh/tree/master/Kexts/TSCAdjustReset), grab kext with the number of cores your processor has and remove the '-(corecount)' at the end of the file name. Copy this file to your EFI folder under `EFI-OC-Kexts`
+        * From the Kexts-TSCAdjustReset [folder](https://github.com/shinoki7/Asus-X299-Hackintosh/tree/master/Kexts/TSCAdjustReset), download the zip with the number of cores your processor and extract the file.  Copy this file to your EFI folder under `EFI-OC-Kexts`
     * PlatformInfo: 
     You will need to create your own Serial Number and SMUUID.  Instructions can be found [here](https://dortania.github.io/OpenCore-Desktop-Guide/config-HEDT/skylake-x.html#platforminfo)
         * Remember to adjust the Type depending on which SMBIOS you are using.  Either iMacPro1,1 or MacPro7,1
@@ -76,7 +76,7 @@ References:
     * It is highly recommended to create your own USB kext. Please use [this](https://dortania.github.io/USB-Map-Guide/) as a proper guide to map your USB ports.
 
 # Additional Kexts
-*[SmallTreeIntel8259x](https://small-tree.com/support/downloads/10-gigabit-ethernet-driver-download-page/) 
+* [SmallTreeIntel8259x](https://small-tree.com/support/downloads/10-gigabit-ethernet-driver-download-page/) 
   * Enables built-in Intel 10G ethernet ports on the Sage/10G.
 * [IntelMausi](https://github.com/acidanthera/IntelMausi/releases)
   * Enables ethernet for most intel controllers
