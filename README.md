@@ -82,7 +82,7 @@ References:
   * Enables ethernet for most intel controllers
 * [SmallTreeIntel82576](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases)
   * Enables ethernet for I211 NICs
-  * Version 1.3 is named (SmallTreeIntel82576-Catalina.kext), for older OS use (SmallTreeIntel8259x.kext)
+  * Version 1.3 is for macOS Catalina, Version 1.2.5 is for macOS 10.13 and 10.14
 * [AGPMInjector.kext](https://github.com/Pavo-IM/AGPMInjector) 
   * Apple Graphics Power Management injector
 
