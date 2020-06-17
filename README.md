@@ -1,13 +1,9 @@
 # Introduction
-The ASUS X299 Hackintosh repo contains OpenCore EFI distributions and related files that can be used as a reference when starting or migrating your X299 Hackintosh to OpenCore.  While the EFIs can be used as a starting point and should be compatible with all ASUS X299 boards, it is still highly recommended to review [OpenCore Vanilla Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/) and [Skylake-X section](https://dortania.github.io/OpenCore-Desktop-Guide/config-HEDT/skylake-x.html) for more information.
-
-References: 
-* [OpenCore Vanilla Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/)
-* [OpenCore Documentation](https://github.com/acidanthera/OpenCorePkg/tree/master/Docs)
+The ASUS X299 Hackintosh repo contains OpenCore EFI distributions and related files that can be used as a reference when starting or migrating your X299 Hackintosh to OpenCore.  While the EFIs can be used as a starting point and should be compatible with all ASUS X299 boards, it is still highly recommended to review the [OpenCore Vanilla Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/) and [Skylake-X section](https://dortania.github.io/OpenCore-Desktop-Guide/config-HEDT/skylake-x.html) for a proper guide.
 
 # Folders
 * ASUS BIOS Patch - Contains version of UEFITool to patch ASUS BIOS versions (3006, 3101) and BIOS 0603 for Cascade Lake-X Refresh Motherboards as the CFG lock option in the BIOS is broken.  This patch disables the lock so we don't have to enable `AppleCpuPMCfgLock` and `AppleXcpmCfgLock`.  Instructions to apply patch are in section [Patching ASUS BIOS](https://github.com/shinoki7/Asus-X299-Hackintosh#patching-asus-bios-required-on-latest-bios-and-cascade-lake-x-refresh-motherboards)
-* Custom BIOS Splashscreen - Contains BIOS with custom logo on splashscreen
+* Custom BIOS Splashscreen - Contains modified BIOS files that have custom splash boot logos
 * BASE-EFI - OpenCore EFIs with the OpenCanary GUI that should be valid for all ASUS X299 boards.  Refer to section [BASE-EFI Configuration](https://github.com/shinoki7/Asus-X299-Hackintosh#base-efi-configuration) for more details.
 * EFI-Validated-Distributions (Archive) - Validated EFIs from other users (Please use this as a reference only as these are not updated)
 * XHC-USB-Kexts - USB kexts created by users for specific motherboards.  Please use [this](https://dortania.github.io/USB-Map-Guide/) as a proper guide to map your USB ports.
@@ -33,22 +29,21 @@ References:
 # What Doesn't Work
 * SideCar due to some T2 chip dependancies on MacPro7,1 and iMacPro1,1 SMBIOS (Using Duet Display as alternative)
 
-# BASE EFI Configuration
-1. Download the latest EFI zip in the Base-EFI folder.
-    * Download [Resources](https://github.com/acidanthera/OcBinaryData/tree/master/Resources) folder and copy to the EFI folder `EFI-OC`
+# Base EFI Configuration
+1. Download all the contents in the BASE-EFI folder
+    * Download the [Resources](https://github.com/acidanthera/OcBinaryData/tree/master/Resources) folder and copy it to your EFI folder under `EFI-OC`
 2. Review
     * Important BIOS Settings
         * Above 4G Encoding: Enabled
         * MSR Lock: Disabled
             * If option isn't available in BIOS, turn on `AppleCpuPmCfgLock` and `AppleXcpmCfgLock` in config.plist under Kernel-Quirks.
             * If on patched ASUS BIOS, MSR lock will already be disabled.
+                * To patch BIOS, Refer to section [Patching ASUS BIOS](https://github.com/shinoki7/Asus-X299-Hackintosh#patching-asus-bios-required-on-latest-bios-and-cascade-lake-x-refresh-motherboards)
+                * If you are not on a patched BIOS or Cascade Lake-X Refresh Motherboard, you can disable the SSDT-AWAC.aml entry in the config.plist under `ACPI-Add`.  You can also delete the file from the EFI folder under `EFI-OC-ACPI`.
         * CSM: Disabled
     * There are two config.plist:  One using iMacPro1,1 SMBIOS and one using MacPro7,1 SMBIOS. Depending on which SMBIOS you choose, rename the file to config.plist and delete the other one.  
         * MacPro7,1 SMBIOS is only compatible with macOS Catalina and higher
         * If using iMacPro1,1 SMBIOS, you can delete MacProMemoryNotificationDisabler.kext under `EFI-OC-Kexts` 
-    * Assumes that you already have MSR lock disabled in BIOS.
-        * To patch BIOS, Refer to section [Patching ASUS BIOS](https://github.com/shinoki7/Asus-X299-Hackintosh#patching-asus-bios-required-on-latest-bios-and-cascade-lake-x-refresh-motherboards)
-        * If on patched BIOS or Cascade Lake-X Refresh motherboard, copy [SSDT-AWAC](https://github.com/shinoki7/Asus-X299-Hackintosh/blob/master/SSDT/SSDT-AWAC.aml) to the EFI folder under `EFI-OC-ACPI` and add SSDT-AWAC as an entry in your config.plist under `ACPI-Add`
 3. Configuration
     * Ethernet: 
         * For WS X299 Sage/10G users replace IntelMausi with [SmallTreeIntel8259x](https://small-tree.com/support/downloads/10-gigabit-ethernet-driver-download-page/) kext and update the kext entry.  NOTE: Requires Ubuntu EEPROM modding outlined in @KGPs [guide section E.8.2.2](https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/)
@@ -101,3 +96,7 @@ NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboar
 3. You should see some lines outputted in terminal ending with 'Image patched' and a new .CAP file with a .patched extension.  Refer to your motherboard's manual (Search for BIOS FlashBack) and rename the .patched file you just created. (For example, WS X299 Sage/10G users, rename the .patched file to 'WSXTG.CAP')
 4. Perform BIOS Flashback.
 5. Add SSDT-AWAC.aml from the SSDT Folder to your EFI.
+6. Add SSDT-AWAC.aml as a new entry in your config.plist under `ACPI-Add`
+    * Comment (String) SSDT-AWAC.aml
+    * Enabled (Boolean) YES
+    * Path (String) SSDT-AWAC.aml
