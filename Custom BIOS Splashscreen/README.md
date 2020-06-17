@@ -1,14 +1,13 @@
-The Custom BIOS Splashscreen folder contains modified BIOS that have custom splash logos instead of the ASUS logo.  Credits to izo1 for finding this.   Will be updated with tutorial and required files later.
+# Custom BIOS Splashscreen
 
-1. WSX299SAGE10G-3101.zip
-    * Prepatched with UEFITool. Add [SSDT-AWAC.aml](https://github.com/shinoki7/Asus-X299-Hackintosh/blob/master/SSDT/SSDT-AWAC.aml) to EFI folder
-    * Motherboard: ASUS WS X299 Sage/10G
-    * BIOS: 3101
-    * Logo: Apple
-    * Credits: izo1
-2. X299Deluxe-3006.zip
-    * Prepatched with UEFITool. Add [SSDT-AWAC.aml](https://github.com/shinoki7/Asus-X299-Hackintosh/blob/master/SSDT/SSDT-AWAC.aml) to EFI folder
-    * Motherboard: ASUS X299 Deluxe
-    * BIOS 3006
-    * Logo: Apple
-    * Credits: izo1
+## Introduction
+The Custom BIOS Splashscreen folder contains modified BIOS that have custom splash logos instead of the ASUS logo.  Will be updated with tutorial and required files later.
+
+## BIOS Collection
+| BIOS File | Motherboard | BIOS Version | Description | Credits |
+| :------- | :---------- | :---------- | :---------- | :---------- |
+|`WSX299SAGE10G-3101.zip` | ASUS WS X299 Sage/10G | 3101 | Prepatched with UEFITool and Apple logo | izo1 |
+|`X299Deluxe-3006.zip` | ASUS X299 Deluxe | 3006 | Prepatched with UEFITool and Apple logo | izo1 |
+
+## Credits
+* izo1 - Special thanks to izo1 for discovering this and how to modify the logo.
