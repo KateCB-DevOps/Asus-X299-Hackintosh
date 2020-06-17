@@ -34,10 +34,10 @@ The ASUS X299 Hackintosh repo contains OpenCore EFI distributions and related fi
 ## What Doesn't Work
 * SideCar due to some T2 chip dependancies on MacPro7,1 and iMacPro1,1 SMBIOS (Using Duet Display as alternative)
 
-## Base EFI Configuration
+# Base EFI Configuration
 The Base EFI folder contains a prebuilt EFI that should be valid for all ASUS X299 motherboards.  It is currently built using OpenCore 0.5.9 with the OpenCanary GUI enabled following the Dortania OpenCore Vanilla Guide.
 
-## Important BIOS Settings
+## 1. Important BIOS Settings
 * Above 4G Encoding: Enabled
 * MSR Lock: Disabled
     * If option isn't available in BIOS, turn on `AppleCpuPmCfgLock` and `AppleXcpmCfgLock` in config.plist under Kernel-Quirks.
@@ -46,7 +46,7 @@ The Base EFI folder contains a prebuilt EFI that should be valid for all ASUS X2
         * If you are not on a patched BIOS or Cascade Lake-X Refresh Motherboard, you can disable the SSDT-AWAC.aml entry in the config.plist under `ACPI-Add`.  You can also delete the file from the EFI folder under `EFI-OC-ACPI`.
 * CSM: Disabled
 
-## Configuration
+## 2. Configuration
 1. Download all the contents in the BASE-EFI folder
     * Download the [Resources](https://github.com/acidanthera/OcBinaryData/tree/master/Resources) folder and copy it to your EFI folder under `EFI-OC`
 2. There are two config.plist located in the EFI folder: One using iMacPro1,1 SMBIOS and one using MacPro7,1 SMBIOS. Depending on which SMBIOS you choose, rename the file to config.plist and delete the other one.
@@ -78,7 +78,7 @@ The Base EFI folder contains a prebuilt EFI that should be valid for all ASUS X2
 6. Post-Install
     * It is highly recommended to create your own USB kext. Please use [this](https://dortania.github.io/USB-Map-Guide/) as a proper guide to map your USB ports.
 
-## Additional Kexts
+# Additional Kexts
 * [SmallTreeIntel8259x](https://small-tree.com/support/downloads/10-gigabit-ethernet-driver-download-page/) 
   * Enables built-in Intel 10G ethernet ports on the Sage/10G.
 * [IntelMausi](https://github.com/acidanthera/IntelMausi/releases)
@@ -89,7 +89,7 @@ The Base EFI folder contains a prebuilt EFI that should be valid for all ASUS X2
 * [AGPMInjector.kext](https://github.com/Pavo-IM/AGPMInjector) 
   * Apple Graphics Power Management injector
 
-## Patching ASUS BIOS (Required on latest BIOS and Cascade Lake-X Refresh Motherboards)
+# Patching ASUS BIOS (Required on latest BIOS and Cascade Lake-X Refresh Motherboards)
 In the latest release of ASUS BIOS for X299 Motherboards (BIOS 3006, 3101) and Cascade Lake-X Refresh boards, the MSR lock option is broken so we will need to patch it in order disable it.  
 NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboard's manual)
 
