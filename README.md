@@ -109,8 +109,10 @@ NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboar
     * Path (String) SSDT-AWAC.aml
 
 ## Credits
-* [Apple](www.apple.com) : For macOS
-* [Acidanthera](https://github.com/acidanthera) : OpencorePkg, kexts
+* Apple : macOS
+* [Acidanthera](https://github.com/acidanthera) : OpencorePkg, kexts, etc.
 * [Dortania](https://github.com/dortania) : Opencore guide
+* [dracoflar](https://github.com/khronokernel) : Modified SSDT-EC-USBX, PLUG, and SBUS-MCHC files, SmallTree 211 patch
+* [Pavo](https://github.com/Pavo-IM) : AGPMInjector
 * DSM2 : SSDT-AWAC for new ASUS BIOS and Cascade Lake-X Refresh motherboard support
 * izo, shael : EFIs and custom boot splashscreen logo
