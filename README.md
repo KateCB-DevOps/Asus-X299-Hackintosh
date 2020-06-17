@@ -92,8 +92,12 @@ In the latest release of ASUS BIOS for X299 Motherboards (BIOS 3006, 3101) and C
 NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboard's manual)
 
 1.  Download UEFIPatch in the ASUS Bios Patch folder and copy latest version of your BIOS in same folder
-2. Run UEFIPatch by running terminal and changing your directory to where you copied UEFIPatch. For example: 'cd /Users/user123/Downloads/UEFIPatch' (Replace 'user123' with your user name)
-3. Then enter: './UEFIPatch WS-X299-SAGE-10G-ASUS-3101.CAP' (Replace the file name of bios with whatever you named your bios)
-4. You should see some lines outputted in terminal ending with 'Image patched' and a new .CAP file with a .patched extension.  Refer to your motherboard's manual (Search for BIOS FlashBack) and rename the .patched file you just created. (For example, WS X299 Sage/10G users, rename the .patched file to 'WSXTG.CAP')
-5. Perform BIOS Flashback.
-6. Add SSDT-AWAC.aml from the SSDT Folder to your EFI.
+2. Open Terminal and run the following commands: 
+    * 'cd /Users/user123/Downloads/UEFIPatch' 
+        * Replace 'user123' with your user name
+        * If you extracted the UEFIPatch folder to another directory, change the path in the command above.
+    * './UEFIPatch WS-X299-SAGE-10G-ASUS-3101.CAP'
+        * Replace the file name of bios with whatever you named your bios
+3. You should see some lines outputted in terminal ending with 'Image patched' and a new .CAP file with a .patched extension.  Refer to your motherboard's manual (Search for BIOS FlashBack) and rename the .patched file you just created. (For example, WS X299 Sage/10G users, rename the .patched file to 'WSXTG.CAP')
+4. Perform BIOS Flashback.
+5. Add SSDT-AWAC.aml from the SSDT Folder to your EFI.
