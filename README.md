@@ -59,22 +59,22 @@ The Base EFI folder contains a prebuilt EFI that should be valid for all ASUS X2
     * From the Kexts-TSCAdjustReset [folder](https://github.com/shinoki7/Asus-X299-Hackintosh/tree/master/Kexts/TSCAdjustReset), download the zip with the number of cores your processor and extract the file.  Copy this file to your EFI folder under `EFI-OC-Kexts`
 5. PlatformInfo: 
     You will need to create your own Serial Number and SMUUID.  Instructions can be found [here](https://dortania.github.io/OpenCore-Desktop-Guide/config-HEDT/skylake-x.html#platforminfo)
-        * Remember to adjust the Type depending on which SMBIOS you are using.  Either iMacPro1,1 or MacPro7,1
-        * Since Automatic and Generic doesn't populate the processor type in About This Mac, Automatic is set to No and there are additional fields to populate in the config.plist.  Using your results from GenSMBIOS, adjust the following (replace 'Removed!!')
-            * `PlatformInfo-DataHub`
-                * SystemSerialNumber: Serial
-                * SystemUUID: SmUUID
-            * `PlatformInfo-Generic`
-                * MLB: Board Serial
-                * SystemSerialNumber: Serial
-                * SystemUUID: SmUUID
-            * `PlatformInfo-PlatformNVRAM`
-                * MLB: Board Serial
-            * `PlatformInfo-SMBIOS`
-                * BoardSerialNumber: Board Serial
-                * ChassisSerialNumber: Serial
-                * SystemSerialNumber: Serial
-                * SystemUUID: SmUUID
+    * Remember to adjust the Type depending on which SMBIOS you are using.  Either iMacPro1,1 or MacPro7,1
+    * Since Automatic and Generic doesn't populate the processor type in About This Mac, Automatic is set to No and there are additional fields to populate in the config.plist.  Using your results from GenSMBIOS, adjust the following (replace 'Removed!!')
+        * `PlatformInfo-DataHub`
+            * SystemSerialNumber: Serial
+            * SystemUUID: SmUUID
+        * `PlatformInfo-Generic`
+            * MLB: Board Serial
+            * SystemSerialNumber: Serial
+            * SystemUUID: SmUUID
+        * `PlatformInfo-PlatformNVRAM`
+            * MLB: Board Serial
+        * `PlatformInfo-SMBIOS`
+            * BoardSerialNumber: Board Serial
+            * ChassisSerialNumber: Serial
+            * SystemSerialNumber: Serial
+            * SystemUUID: SmUUID
 6. Post-Install
     * It is highly recommended to create your own USB kext. Please use [this](https://dortania.github.io/USB-Map-Guide/) as a proper guide to map your USB ports.
 
