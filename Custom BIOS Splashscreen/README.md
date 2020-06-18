@@ -1,7 +1,7 @@
-# Custom BIOS Splashscreen
+# Custom BIOS Collection
 
 ## Introduction
-The Custom BIOS Splashscreen folder contains modified BIOS that have custom splash logos instead of the ASUS logo.  Will be updated with tutorial and required files later.
+The Custom BIOS collection folder contains modified BIOS that have custom splash logos instead of the ASUS logo.  Will be updated with tutorial and required files later.
 
 ## BIOS Collection
 | BIOS File | Motherboard | BIOS Version | Description | Credits |
