@@ -1,10 +1,9 @@
-## ASUS X299 Hackintosh
+# ASUS X299 Hackintosh
 
-## Introduction
+# Introduction
 The ASUS X299 Hackintosh repo contains OpenCore EFI distributions and related files that can be used as a reference when starting or migrating your X299 Hackintosh to OpenCore.  While the EFIs can be used as a starting point and should be compatible with all ASUS X299 boards, it is still highly recommended to review the [OpenCore Vanilla Desktop Guide](https://dortania.github.io/OpenCore-Desktop-Guide/) and [Skylake-X section](https://dortania.github.io/OpenCore-Desktop-Guide/config-HEDT/skylake-x.html) for a proper guide.
 
-## Folders
-
+# Folders
 | Folder | Description |
 | :------------- | :---------- |
 | ASUS BIOS Patch | Contains version of UEFITool to patch ASUS BIOS versions (3006, 3101) and BIOS 0603 for Cascade Lake-X Refresh Motherboards as the CFG lock option in the BIOS is broken.  This patch disables the lock so we don't have to enable `AppleCpuPMCfgLock` and `AppleXcpmCfgLock`.  Instructions to apply patch are in section [Patching ASUS BIOS](https://github.com/shinoki7/Asus-X299-Hackintosh#patching-asus-bios-required-on-latest-bios-and-cascade-lake-x-refresh-motherboards) |
@@ -13,13 +12,36 @@ The ASUS X299 Hackintosh repo contains OpenCore EFI distributions and related fi
 | EFI-Validated-Distributions (Archive) | Validated EFIs from other users (Please use this as a reference only as these are not updated) | 
 | XHC USB Kexts | USB kexts created by users for specific motherboards.  Please use [this](https://dortania.github.io/USB-Map-Guide/) as a proper guide to map your USB ports. |
 
+# Personal Build Specifications
+## Components
+* Motherboard : ASUS WS X299 Sage/10G
+    * BIOS 3101
+* Processor : Intel i9 9960X
+* CPU Cooler : Fractal Design S36+ AIO
+* RAM : 4x16 Corsair Vengeance RGB Pro 3200 Mhz
+    * Currently clocked at 2933 Mhz
+* Boot Drive : Samsung 970 EVO 1 TB
+* Graphics Card : Sapphire RX 580 Pulse 8 GB
+* Power Supply : Corsair RM 850x
+* Case : Lian Li PC 011 Dynamic
+
+## Additional Components / Peripherals
+* 2X Gigabyte Titan Ridge Thunderbolt 3 Card 
+    * Flashed with custom NVM50 firmware
+* Apple Magic Keyboard 2 (Space Gray)
+* Apple Magic Trackpad 2 (Space Gray)
+* Apple Magic Mouse 2 (Space Gray)
+* LG 27UL600 27" 4K UHD Monitor
+* LG 27UK600 27" 4K UHD Monitor
+* LG C9 65" 4K UHD TV
+
 ## What Works
 * Sleep / Wake
 * Wifi and Bluetooth (Using natively supported Broadcom BCM94360CD)
 * Handoff, Continuity, AirDrop, Continuity Camera, and Unlock with Apple Watch
 * iMessage, FaceTime, App Store, iTunes Store
 * Ethernet
-* 10G Ethernet
+* 10Gb Ethernet
 * HEVC, H.264
 * Onboard audio
 * TRIM
@@ -33,6 +55,17 @@ The ASUS X299 Hackintosh repo contains OpenCore EFI distributions and related fi
 
 ## What Doesn't Work
 * SideCar due to some T2 chip dependancies on MacPro7,1 and iMacPro1,1 SMBIOS (Using Duet Display as alternative)
+
+## Comments
+The ASUS WS X299 Sage series (WS X299 Sage, WS X299 Sage/10G, Pro WS X299 Sage II) are great motherboards with 7 PCIe slots running at 16x/8x/8x/8x/8x/8x/8x and multiple M.2/U.2 connections.  The Sage/10G even includes dual 10Gb Intel X550-AT2 LAN ports that are compatible with macOS. Unfortunately the motherboards only have a few USB ports and only a single 19 Pin USB 3.0 header for internal ports.  In order to connect internal USB devices such as Bluetooth or RGB Controllers there are a few options.  Note that the specific cables/card listed below are examples.  Just make sure the PCIe card is compatible with macOS.
+* 1. [USB 3.0 20 Pin Female to USB 2.0 Pin Male adapter](https://www.amazon.com/gp/product/B01MFB04JP/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+    * With this you will not have a USB 3.0 header to connect to the front of your case
+    * Currently using this in my build with a [USB 2.0 9 Pin Header 1 to 4 Extension Hub Splitter](https://www.amazon.com/gp/product/B085KVH16T/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) to connect Bluetooth and the USB 2.0 cables for my 2 thunderbolt 3 cards.
+* 2. [USB 2.0 IDC 5 Male to USB A Male adapter](https://www.amazon.com/gp/product/B000V6WD8A/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+    * Uses one of the USB ports on the back of the motherboard to connect internal devices in the case.
+* 3. [PCIe USB 3.0 Card with Internal USB 3.0 20 Pin Connector](https://www.amazon.com/Inateck-Express-Controller-Internal-Connector/dp/B00JFR2H64/ref=sr_1_3?dchild=1&keywords=inateck+pcie+card&qid=1592455853&s=electronics&sr=1-3)
+    * Can use the internal header on the card for the case USB ports or to connect internal devices.
+    * NOTE: Wake from Bluetooth devices does not work with this so it's best to connect Bluetooth to one of the motherboard ports.
 
 # Base EFI Configuration
 The Base EFI folder contains a prebuilt EFI that should be valid for all ASUS X299 motherboards.  It is currently built using OpenCore 0.5.9 with the OpenCanary GUI enabled following the Dortania OpenCore Vanilla Guide.
@@ -108,7 +141,7 @@ NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboar
     * Enabled (Boolean) YES
     * Path (String) SSDT-AWAC.aml
 
-## Credits
+# Credits
 * Apple : macOS
 * [Acidanthera](https://github.com/acidanthera) : OpencorePkg, kexts, etc.
 * [Dortania](https://github.com/dortania) : Opencore guide
