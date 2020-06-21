@@ -116,12 +116,14 @@ The Base EFI folder contains a prebuilt EFI that should be valid for all ASUS X2
 # Additional Kexts
 * [SmallTreeIntel8259x](https://small-tree.com/support/downloads/10-gigabit-ethernet-driver-download-page/) 
   * Enables built-in Intel 10G ethernet ports on the Sage/10G.
+  * Install the version compatible with your version of macOS.
+  * Ubuntu EEPROM modding in @KGPs [guide section E.8.2.2](https://www.tonymacx86.com/threads/how-to-build-your-own-imac-pro-successful-build-extended-guide.229353/) is required for this kext to work.
 * [IntelMausi](https://github.com/acidanthera/IntelMausi/releases)
   * Enables ethernet for most intel controllers
 * [SmallTreeIntel82576](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases)
   * Enables ethernet for I211 NICs
   * Version 1.3 is for macOS Catalina, Version 1.2.5 is for macOS 10.13 and 10.14
-* [AGPMInjector.kext](https://github.com/Pavo-IM/AGPMInjector) 
+* [AGPMInjector](https://github.com/Pavo-IM/AGPMInjector) 
   * Apple Graphics Power Management injector
 
 # Patching ASUS BIOS (Required on latest BIOS and Cascade Lake-X Refresh Motherboards)
@@ -137,8 +139,8 @@ NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboar
         * Replace the file name of bios with whatever you named your bios
 3. You should see some lines outputted in terminal ending with 'Image patched' and a new .CAP file with a .patched extension.  Refer to your motherboard's manual (Search for BIOS FlashBack) and rename the .patched file you just created. (For example, WS X299 Sage/10G users, rename the .patched file to 'WSXTG.CAP')
 4. Perform BIOS Flashback.
-5. Add SSDT-AWAC.aml from the SSDT Folder to your EFI.
-6. Add SSDT-AWAC.aml as a new entry in your config.plist under `ACPI-Add`
+5. Double check that [SSDT-AWAC.aml](https://github.com/shinoki7/Asus-X299-Hackintosh/blob/master/SSDT/SSDT-AWAC.aml) is in your EFI folder under `EFI-OC-ACPI`.
+6. Double check that SSDT-AWAC.aml is an entry in your config.plist under `ACPI-Add`.  If not add a new one with these values
     * Comment (String) SSDT-AWAC.aml
     * Enabled (Boolean) YES
     * Path (String) SSDT-AWAC.aml
@@ -149,5 +151,5 @@ NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboar
 * [Dortania](https://github.com/dortania) : Opencore guide
 * [dracoflar](https://github.com/khronokernel) : Modified SSDT-EC-USBX, PLUG, and SBUS-MCHC files, SmallTree 211 patch
 * [Pavo](https://github.com/Pavo-IM) : AGPMInjector
-* DSM2 : SSDT-AWAC for new ASUS BIOS and Cascade Lake-X Refresh motherboard support
-* izo, shael : EFIs and custom boot splashscreen logo
+* DSM2, Download-Fritz, and vit9696 : SSDT-AWAC and UEFITool for new ASUS BIOS and Cascade Lake-X Refresh motherboard support
+* izo1, shael : EFIs and custom boot splashscreen logo
