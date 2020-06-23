@@ -1,7 +1,7 @@
 # Custom BIOS Collection
 
 ## Introduction
-The Custom BIOS collection folder contains modified BIOS that have custom splash logos instead of the ASUS logo.  Will be updated with tutorial and required files later.
+The Custom BIOS collection folder contains modified BIOS that have custom boot logos instead of the ASUS logo.  A guide to create your own boot logo can be located [here](https://climbjoe.tv/how-to-change-your-mainboard-boot-logo-image-to-custom-imac-pro-image-logo/).
 
 ## BIOS Collection
 | BIOS File | Motherboard | BIOS Version | Description | Credits |

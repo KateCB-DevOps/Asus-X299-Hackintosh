@@ -7,7 +7,7 @@ The ASUS X299 Hackintosh repo contains OpenCore EFI distributions and related fi
 | Folder | Description |
 | :------------- | :---------- |
 | ASUS BIOS Patch | Contains version of UEFITool to patch ASUS BIOS versions (3006, 3101) and BIOS 0603 for Cascade Lake-X Refresh Motherboards as the CFG lock option in the BIOS is broken.  This patch disables the lock so we don't have to enable `AppleCpuPMCfgLock` and `AppleXcpmCfgLock`.  Instructions to apply patch are in section [Patching ASUS BIOS](https://github.com/shinoki7/Asus-X299-Hackintosh#patching-asus-bios-required-on-latest-bios-and-cascade-lake-x-refresh-motherboards) |
-| Custom BIOS Collection | Contains modified BIOS files that have custom splash boot logos |
+| Custom BIOS Collection | Contains modified BIOS files that have custom boot logos |
 | BASE-EFI | OpenCore EFIs with the OpenCanary GUI that should be valid for all ASUS X299 boards.  Refer to section [BASE-EFI Configuration](https://github.com/shinoki7/Asus-X299-Hackintosh#base-efi-configuration) for more details. |
 | EFI-Validated-Distributions (Archive) | Validated EFIs from other users (Please use this as a reference only as these are not updated) | 
 | XHC USB Kexts | USB kexts created by users for specific motherboards.  Please use [this](https://dortania.github.io/USB-Map-Guide/) as a proper guide to map your USB ports. |
@@ -152,4 +152,4 @@ NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboar
 * [dracoflar](https://github.com/khronokernel) : Modified SSDT-EC-USBX, PLUG, and SBUS-MCHC files, SmallTree 211 patch
 * [Pavo](https://github.com/Pavo-IM) : AGPMInjector
 * DSM2, Download-Fritz, and vit9696 : SSDT-AWAC and UEFITool for new ASUS BIOS and Cascade Lake-X Refresh motherboard support
-* izo1, shael : EFIs and custom boot splashscreen logo
+* izo1, shael : EFIs and custom boot logos
