@@ -10,7 +10,7 @@ The ASUS X299 Hackintosh repo contains OpenCore EFI distributions and related fi
 | Custom BIOS Collection | Contains modified BIOS files that have custom boot logos |
 | BASE-EFI | OpenCore EFIs with the OpenCanary GUI that should be valid for all ASUS X299 boards.  Refer to section [BASE-EFI Configuration](https://github.com/shinoki7/Asus-X299-Hackintosh#base-efi-configuration) for more details. |
 | EFI-Validated-Distributions (Archive) | Validated EFIs from other users (Please use this as a reference only as these are not updated) | 
-| XHC USB Kexts | USB kexts created by users for specific motherboards.  Please use [this](https://dortania.github.io/USB-Map-Guide/) as a proper guide to map your USB ports. |
+| XHC USB Kexts | USB kexts created by users for specific motherboards. |
 
 # Personal Build Specifications
 ## Components
@@ -111,7 +111,9 @@ The Base EFI folder contains a prebuilt EFI that should be valid for all ASUS X2
             * SystemSerialNumber: Serial
             * SystemUUID: SmUUID
 6. Post-Install
-    * It is highly recommended to create your own USB kext. Please use [this](https://dortania.github.io/USB-Map-Guide/) as a proper guide to map your USB ports.
+    * It is highly recommended to create your own USB kext. 
+        * [Dortania USB Map Guide](https://dortania.github.io/USB-Map-Guide/)
+        * [Alternative guide](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/)
 
 # Additional Kexts
 * [SmallTreeIntel8259x](https://small-tree.com/support/downloads/10-gigabit-ethernet-driver-download-page/) 
