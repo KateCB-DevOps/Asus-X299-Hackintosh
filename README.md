@@ -113,7 +113,7 @@ The Base EFI folder contains a prebuilt EFI that should be valid for all ASUS X2
 6. Post-Install
     * It is highly recommended to create your own USB kext. 
         * [Dortania USB Map Guide](https://dortania.github.io/USB-Map-Guide/)
-        * [Alternative guide](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/)
+        * [Alternative guide](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/) using Hackintool
 
 # Additional Kexts
 * [SmallTreeIntel8259x](https://small-tree.com/support/downloads/10-gigabit-ethernet-driver-download-page/) 
