@@ -87,6 +87,8 @@
 			<true/>
 			<key>ProvideCustomSlide</key>
 			<true/>
+			<key>ProvideMaxSlide</key>
+			<integer>0</integer>
 			<key>RebuildAppleMemoryMap</key>
 			<true/>
 			<key>SetupVirtualMap</key>
@@ -258,9 +260,11 @@
 		<key>Emulate</key>
 		<dict>
 			<key>Cpuid1Data</key>
-			<data></data>
+			<data>
+			</data>
 			<key>Cpuid1Mask</key>
-			<data></data>
+			<data>
+			</data>
 		</dict>
 		<key>Patch</key>
 		<array/>
@@ -352,10 +356,8 @@
 			<true/>
 			<key>AuthRestart</key>
 			<false/>
-			<key>BlacklistAppleUpdate</key>
-			<true/>
 			<key>BootProtect</key>
-			<string>None</string>
+			<string>Bootstrap</string>
 			<key>ExposeSensitiveData</key>
 			<integer>6</integer>
 			<key>HaltLevel</key>
@@ -375,29 +377,46 @@
 			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 			<dict>
 				<key>DefaultBackgroundColor</key>
-				<data>AAAAAA==</data>
+				<data>
+				AAAAAA==
+				</data>
 				<key>UIScale</key>
-				<data>AQ==</data>
+				<data>
+				AQ==
+				</data>
 			</dict>
 			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
 			<dict>
 				<key>rtc-blacklist</key>
-				<data></data>
+				<data>
+				</data>
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>SystemAudioVolume</key>
-				<data>Rg==</data>
+				<data>
+				Rg==
+				</data>
 				<key>boot-args</key>
-				<string>-v alcid=1 -lilubetall</string>
+				<string>-v alcid=1</string>
 				<key>booter-fileset-basesystem</key>
-				<data>AA==</data>
+				<data>
+				AA==
+				</data>
 				<key>booter-fileset-kernel</key>
-				<data>AA==</data>
+				<data>
+				AA==
+				</data>
 				<key>csr-active-config</key>
-				<data>AAAAAA==</data>
+				<data>
+				AAAAAA==
+				</data>
 				<key>prev-lang:kbd</key>
-				<data>ZW4tVVM6MA==</data>
+				<data>
+				ZW4tVVM6MA==
+				</data>
+				<key>run-efi-updater</key>
+				<string>No</string>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -460,7 +479,9 @@
 			<key>BoardProduct</key>
 			<string>Mac-27AD2F918AE68F61</string>
 			<key>BoardRevision</key>
-			<data>AQ==</data>
+			<data>
+			AQ==
+			</data>
 			<key>DevicePathsSupported</key>
 			<integer>1</integer>
 			<key>FSBFrequency</key>
@@ -470,11 +491,17 @@
 			<key>PlatformName</key>
 			<string>platform</string>
 			<key>SmcBranch</key>
-			<data>ajEzNw==</data>
+			<data>
+			ajEzNw==
+			</data>
 			<key>SmcPlatform</key>
-			<data>ajEzNw==</data>
+			<data>
+			ajEzNw==
+			</data>
 			<key>SmcRevision</key>
-			<data>AgBBAA8A</data>
+			<data>
+			AgBBAA8A
+			</data>
 			<key>StartupPowerEvents</key>
 			<integer>0</integer>
 			<key>SystemProductName</key>
@@ -491,7 +518,9 @@
 			<key>MLB</key>
 			<string>Removed!!</string>
 			<key>ROM</key>
-			<data>/P//APz/</data>
+			<data>
+			/P//APz/
+			</data>
 			<key>SpoofVendor</key>
 			<false/>
 			<key>SystemProductName</key>
@@ -506,13 +535,19 @@
 			<key>BID</key>
 			<string>Mac-27AD2F918AE68F61</string>
 			<key>FirmwareFeatures</key>
-			<data>/Y/1Pw==</data>
+			<data>
+			/Y/1Pw==
+			</data>
 			<key>FirmwareFeaturesMask</key>
-			<data>/5//Pw==</data>
+			<data>
+			/5//Pw==
+			</data>
 			<key>MLB</key>
 			<string>Removed!!</string>
 			<key>ROM</key>
-			<data>/P//APz/</data>
+			<data>
+			/P//APz/
+			</data>
 		</dict>
 		<key>SMBIOS</key>
 		<dict>
@@ -547,9 +582,13 @@
 			<key>ChassisVersion</key>
 			<string>Mac-27AD2F918AE68F61</string>
 			<key>FirmwareFeatures</key>
-			<data>/Y/1Pw==</data>
+			<data>
+			/Y/1Pw==
+			</data>
 			<key>FirmwareFeaturesMask</key>
-			<data>/5//Pw==</data>
+			<data>
+			/5//Pw==
+			</data>
 			<key>MemoryFormFactor</key>
 			<integer>9</integer>
 			<key>PlatformFeature</key>
@@ -557,7 +596,9 @@
 			<key>ProcessorType</key>
 			<integer>3841</integer>
 			<key>SmcVersion</key>
-			<data>AAAAAAAAAAAAAAAAAAAAAA==</data>
+			<data>
+			AAAAAAAAAAAAAAAAAAAAAA==
+			</data>
 			<key>SystemFamily</key>
 			<string>MacPro</string>
 			<key>SystemManufacturer</key>

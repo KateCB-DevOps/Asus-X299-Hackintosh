@@ -87,6 +87,8 @@
 			<true/>
 			<key>ProvideCustomSlide</key>
 			<true/>
+			<key>ProvideMaxSlide</key>
+			<integer>0</integer>
 			<key>RebuildAppleMemoryMap</key>
 			<true/>
 			<key>SetupVirtualMap</key>
@@ -354,10 +356,8 @@
 			<true/>
 			<key>AuthRestart</key>
 			<false/>
-			<key>BlacklistAppleUpdate</key>
-			<true/>
 			<key>BootProtect</key>
-			<string>None</string>
+			<string>Bootstrap</string>
 			<key>ExposeSensitiveData</key>
 			<integer>6</integer>
 			<key>HaltLevel</key>
@@ -398,7 +398,7 @@
 				Rg==
 				</data>
 				<key>boot-args</key>
-				<string>-v alcid=1 -lilubetall</string>
+				<string>-v alcid=1</string>
 				<key>booter-fileset-basesystem</key>
 				<data>
 				AA==
@@ -415,6 +415,8 @@
 				<data>
 				ZW4tVVM6MA==
 				</data>
+				<key>run-efi-updater</key>
+				<string>No</string>
 			</dict>
 		</dict>
 		<key>Delete</key>
