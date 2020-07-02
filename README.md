@@ -91,7 +91,9 @@ The Base EFI folder contains a prebuilt EFI that should be valid for all ASUS X2
     * For users with I211 NICs like the X299 Deluxe, copy the [SmallTreeIntel82576](https://github.com/khronokernel/SmallTree-I211-AT-patch/releases) kext to your EFI folder and add a new kext entry under `Kernel-Add`
 4. TSCAdjustReset:
     * From the Kexts-TSCAdjustReset [folder](https://github.com/shinoki7/Asus-X299-Hackintosh/tree/master/Kexts/TSCAdjustReset), download the zip with the number of cores your processor and extract the file.  Copy this file to your EFI folder under `EFI-OC-Kexts`
-5. PlatformInfo: 
+5. SSDT-RTC0: 
+    * By default, the Base-EFI folder assumes you're on the latest patched BIOS and has SSDT-RTC0.aml enabled.  If you're on a pre Cascade Lake X motherboard and BIOS version below 3000 (i.e 2002) replace SSDT-RTC0.aml in your EFI folder with [SSDT-RTC0-NOAWAC.aml](https://github.com/shinoki7/Asus-X299-Hackintosh/blob/master/SSDT/SSDT-RTC0-NOAWAC.aml) and rename to SSDT-RTC0.aml
+6. PlatformInfo: 
     You will need to create your own Serial Number and SMUUID.  Instructions can be found [here](https://dortania.github.io/OpenCore-Desktop-Guide/config-HEDT/skylake-x.html#platforminfo)
     * Remember to adjust the Type depending on which SMBIOS you are using.  Either iMacPro1,1 or MacPro7,1
     * Since Automatic and Generic doesn't populate the processor type in About This Mac, Automatic is set to No and there are additional fields to populate in the config.plist.  Using your results from GenSMBIOS, adjust the following (replace 'Removed!!')
@@ -154,8 +156,8 @@ NOTE: Your motherboard needs to support BIOS FlashBack (Refer to your motherboar
         * Replace the file name of bios with whatever you named your bios
 3. You should see some lines outputted in terminal ending with 'Image patched' and a new .CAP file with a .patched extension.  Refer to your motherboard's manual (Search for BIOS FlashBack) and rename the .patched file you just created. (For example, WS X299 Sage/10G users, rename the .patched file to 'WSXTG.CAP')
 4. Perform BIOS Flashback.
-5. Double check that [SSDT-RTC0.aml](https://github.com/shinoki7/Asus-X299-Hackintosh/blob/master/SSDT/SSDT-RTC0.aml) is in your EFI folder under `EFI-OC-ACPI`.
-6. Double check that SSDT-RTC0.aml is an entry in your config.plist under `ACPI-Add`.  If not add a new one with these values
+5. Double check that [SSDT-RTC0.aml](https://github.com/shinoki7/Asus-X299-Hackintosh/blob/master/SSDT/SSDT-RTC0.aml) is in your EFI folder under `EFI-OC-ACPI`.  If you already have SSDT-AWAC.aml, you can replace it with SSDT-RTC0.aml
+6. Double check that SSDT-RTC0.aml is an entry in your config.plist under `ACPI-Add`.  If you already have SSDT-AWAC.aml, you can replace it with SSDT-RTC0.aml.
     * Comment (String) SSDT-RTC0.aml
     * Enabled (Boolean) YES
     * Path (String) SSDT-RTC0.aml
