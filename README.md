@@ -128,18 +128,6 @@ The Base EFI folder contains a prebuilt EFI that should be valid for all ASUS X2
   * Apple Graphics Power Management injector
   
 # macOS Big Sur Installation
-It is currently not possible to fresh install or upgrade to macOS Big Sur due to kext injection in the installer not being supported with OpenCore.
-
-To install there are 3 options:
-* Install to the drive using a real Mac.
-* Install to the drive using a VM.
-* Use a prebuilt image of Big Sur and restore it to your drive.
-    
-Once installed you will need:
-* Beta build of OpenCore 0.6.0
-* Latest builds of kexts
-* SSDT-RTC0.aml patch (This replaces SSDT-AWAC.aml)
-    
 The [macOS Big Sur](https://github.com/shinoki7/Asus-X299-Hackintosh/tree/master/macOS%20Big%20Sur) folder contains an updated BASE EFI that is compatible with macOS Big Sur.
 * NOTE: The MacProMemoryNotificationDisabler.kext is removed since it is not compatible with macOS Big Sur yet.
 
